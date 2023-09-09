@@ -64,11 +64,14 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
-    annotationProcessor ("androidx.room:room-compiler:2.5.0")
-    // To use Kotlin annotation processing tool (kapt)
-    kapt ("androidx.room:room-compiler:2.5.0")
-    // To use Kotlin Symbol Processing (KSP)
-    implementation("androidx.core:core-ktx:1.9.0")
+
+    //Room components
+    implementation ("androidx.room:room-runtime:2.2.5")
+    kapt ("androidx.room:room-compiler:2.2.5")
+    implementation ("androidx.room:room-ktx:2.2.5")
+    androidTestImplementation ("androidx.room:room-testing:2.2.5")
+
+
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
     implementation("androidx.activity:activity-compose:1.7.2")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))

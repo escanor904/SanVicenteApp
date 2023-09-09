@@ -4,12 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.uniquindio.sanvicenteapp.entities.Paciente
 
 @Database(entities = [Paciente::class], version = 1, exportSchema = false)
 abstract class SanVicenteDatabase: RoomDatabase() {
 
-    abstract fun PacienteDao(): Paciente
+    abstract fun PacienteDao(): PacienteDao
    /*
    companion objeto compañero que proporciona metodos estaticos para acceder a la base de datos
     */

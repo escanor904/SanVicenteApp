@@ -5,7 +5,6 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.uniquindio.sanvicenteapp.entities.Paciente
 
 /*
 En esta interface se ubican todas la operaciones de acceso a datos en la tabla paciente_table

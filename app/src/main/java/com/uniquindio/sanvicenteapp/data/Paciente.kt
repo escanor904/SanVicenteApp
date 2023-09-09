@@ -1,13 +1,15 @@
-package com.uniquindio.sanvicenteapp.entities
-import androidx.annotation.NonNull
-import androidx.room.ColumnInfo
+package com.uniquindio.sanvicenteapp.data
+import androidx.room.Dao
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+
 
 @Entity(tableName="paciente_table")
 data class Paciente(
     @PrimaryKey(autoGenerate = true)
     val id:Int,
-    val Nombre:String,
+    val nombre:String,
     val apellido:String
-)
+) {
+
+}
