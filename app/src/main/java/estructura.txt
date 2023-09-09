@@ -1,0 +1,17 @@
+    io (Input/Output): En este paquete o carpeta, generalmente se colocan las clases relacionadas
+                     con la entrada y salida de datos, como la gestión de archivos, operaciones de red y cualquier
+                     interacción con dispositivos externos.
+
+    model: Este paquete suele contener las clases que representan los datos de la aplicación.
+           Estas clases pueden ser modelos de datos que reflejan la estructura de la información que maneja
+           la aplicación, como los datos de los pacientes en una aplicación de gestión de citas de hospital.
+
+    ui(User Interface): En este paquete o carpeta, se suelen agrupar las clases relacionadas con la
+                         interfaz de usuario, como actividades, fragmentos, adaptadores y otros componentes
+                         de la interfaz de usuario. Aquí se gestiona cómo se muestra la información al usuario
+                         y cómo se interactúa con él.
+
+    util (Utilities): El paquete de utilidades es comúnmente utilizado para almacenar clases y funciones
+                      de utilidad que no encajan en las otras categorías, pero que se utilizan en todo
+                       el proyecto. Esto puede incluir funciones de procesamiento de datos, herramientas de
+                       ayuda, clases de manejo de errores, etc.
