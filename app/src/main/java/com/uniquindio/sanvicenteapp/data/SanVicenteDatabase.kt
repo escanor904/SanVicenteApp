@@ -5,10 +5,15 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [Paciente::class], version = 1, exportSchema = false)
+@Database(
+    //especificamos nuestras entidades
+    entities = [Paciente::class],
+    version = 1,
+    exportSchema = false
+)
 abstract class SanVicenteDatabase: RoomDatabase() {
 
-    abstract fun PacienteDao(): PacienteDao
+    abstract fun pacienteDao(): PacienteDao
    /*
    companion objeto compañero que proporciona metodos estaticos para acceder a la base de datos
     */

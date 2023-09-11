@@ -1,10 +1,10 @@
 package com.uniquindio.sanvicenteapp.data
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Upsert
+import kotlinx.coroutines.flow.Flow
+import com.uniquindio.sanvicenteapp.data.Paciente as Paciente
 
 /*
 En esta interface se ubican todas la operaciones de acceso a datos en la tabla paciente_table
@@ -13,10 +13,11 @@ En esta interface se ubican todas la operaciones de acceso a datos en la tabla p
 interface PacienteDao {
     //@Insert: Esta anotación indica que el método se utiliza para realizar una operación de inserción en la base de datos.
     //onConflict = OnConflictStrategy.IGNORE si se intenta insertar un registro con el mismo id lo ignora y no hace nada
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    //las operaciones en la base de datos son lentas por ende tiene que llamarse desde un contexto suspendido para que no se afecte el hilo principal de la aplicación
-    suspend fun addPaciente(paciente: Paciente)
+    @Upsert
+    //se inserta si no existe y si existe lo actualiza a diferencia de insert que puede causar errores
+    fun addPaciente(paciente: Paciente)
 
-    @Query("SELECT * FROM paciente_table ORDER BY id ASC")
-    fun readALLDate():LiveData<List<Paciente>>
+
+    @Query("SELECT * FROM paciente ")
+    fun getPacientes(): Flow<List<Paciente>>
 }

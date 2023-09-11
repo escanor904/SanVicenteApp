@@ -11,13 +11,13 @@ import kotlinx.coroutines.launch
 
 class PacienteViewModel(application: Application):AndroidViewModel (application){
 
-    private val readAllData: LiveData<List<Paciente>>
+   // private val readAllData: LiveData<List<Paciente>>
     private val repository: PacienteRepo
 
     init {
-        val pacienteDao = SanVicenteDatabase.getDatabase(application).PacienteDao()
+        val pacienteDao = SanVicenteDatabase.getDatabase(application).pacienteDao()
         repository = PacienteRepo(pacienteDao)
-        readAllData = repository.readAllData
+       // readAllData = repository.readAllData
     }
 
     fun addPaciente(paciente: Paciente){
@@ -26,7 +26,7 @@ class PacienteViewModel(application: Application):AndroidViewModel (application)
         }
     }
 
-    fun listarPacientes(): LiveData<List<Paciente>> {
-        return repository.readAllData
-    }
+//    fun listarPacientes(): LiveData<List<Paciente>> {
+//        return repository.readAllData
+//    }
 }

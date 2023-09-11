@@ -6,9 +6,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
-import com.uniquindio.sanvicenteapp.data.Paciente
 import com.uniquindio.sanvicenteapp.viewmodels.PacienteViewModel
 
 
@@ -19,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var editText2: EditText
     private lateinit var textView_1: TextView
     private lateinit var paciendeViewModel: PacienteViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         //savedInstanceState: Bundle? guarda el estado de una actividad cuando se crea o reicia
@@ -31,8 +30,8 @@ class MainActivity : AppCompatActivity() {
         editText2 = findViewById<EditText>(R.id.editText_2)
         textView_1= findViewById<TextView>(R.id.textView_1)
 
-//        paciendeViewModel = ViewModelProvider(this).get(PacienteViewModel::class.java)
-//        Toast.makeText(this,"paciente agrregado al  BBD",Toast.LENGTH_SHORT).show()
+       paciendeViewModel = ViewModelProvider(this).get(PacienteViewModel::class.java)
+       Toast.makeText(this,"paciente agrregado al  BBD",Toast.LENGTH_SHORT).show()
 //
 //        var salida:LiveData<List<Paciente>> = paciendeViewModel.listarPacientes()
 //        print(salida)
