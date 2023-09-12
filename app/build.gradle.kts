@@ -54,6 +54,9 @@ android {
 
 dependencies {
 
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4") // Reemplaza 1.x.x con la versión actual
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+
     implementation("androidx.constraintlayout:constraintlayout:2.1.0-alpha1")
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")

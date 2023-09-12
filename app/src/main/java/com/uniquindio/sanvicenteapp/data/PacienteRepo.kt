@@ -1,11 +1,16 @@
 package com.uniquindio.sanvicenteapp.data
-import androidx.lifecycle.LiveData
+
+import kotlinx.coroutines.flow.Flow
 
 
 class PacienteRepo(private val pacienteDao: PacienteDao){
 
-    fun addPaciente(paciente : Paciente){
+    suspend fun addPaciente(paciente : Paciente){
         pacienteDao.addPaciente(paciente)
+    }
+
+    fun leerPacientes(): Flow<List<Paciente>> {
+        return pacienteDao.getPacientes()
     }
 
 

@@ -7,7 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.uniquindio.sanvicenteapp.data.Paciente
 import com.uniquindio.sanvicenteapp.viewmodels.PacienteViewModel
+import kotlinx.coroutines.launch
+import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.ViewModel
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,14 +32,22 @@ class MainActivity : AppCompatActivity() {
         //la clase R nos sirve como puente entre grafica y logica
         editText1 = findViewById<EditText>(R.id.editText_1)
         editText2 = findViewById<EditText>(R.id.editText_2)
-        textView_1= findViewById<TextView>(R.id.textView_1)
+        textView_1 = findViewById<TextView>(R.id.textView_1)
 
-       paciendeViewModel = ViewModelProvider(this).get(PacienteViewModel::class.java)
-       Toast.makeText(this,"paciente agrregado al  BBD",Toast.LENGTH_SHORT).show()
-//
-//        var salida:LiveData<List<Paciente>> = paciendeViewModel.listarPacientes()
-//        print(salida)
 
+
+        paciendeViewModel = ViewModelProvider(this).get(PacienteViewModel::class.java)
+        val paciente:Paciente= Paciente(0,"pepito","perez")
+        paciendeViewModel.addPaciente(paciente)
+        Toast.makeText(this, "paciente agrregado al  BBD", Toast.LENGTH_SHORT).show()
+
+//       var pacientesFlow:Flow<List<Paciente>> = paciendeViewModel.listarPacientes()
+//        pacientesFlow.collect() { pacientes ->
+//            // Procesar los datos aquí
+//            for (paciente in pacientes) {
+//                println("ID: ${paciente.id}, Nombre: ${paciente.nombre} ")
+//            }
+//        }
     }
     //Este método realiza la suma
     fun sumar( view: View){
