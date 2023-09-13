@@ -3,8 +3,8 @@ package com.uniquindio.sanvicenteapp.data
 import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Upsert
+import com.uniquindio.sanvicenteapp.entities.Paciente
 import kotlinx.coroutines.flow.Flow
-import com.uniquindio.sanvicenteapp.data.Paciente as Paciente
 
 /*
 En esta interface se ubican todas la operaciones de acceso a datos en la tabla paciente_table

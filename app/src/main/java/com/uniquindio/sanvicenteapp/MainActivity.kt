@@ -7,11 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.uniquindio.sanvicenteapp.data.Paciente
+import com.uniquindio.sanvicenteapp.entities.Paciente
 import com.uniquindio.sanvicenteapp.viewmodels.PacienteViewModel
-import kotlinx.coroutines.launch
-import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.ViewModel
 
 
 class MainActivity : AppCompatActivity() {
@@ -37,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
 
         paciendeViewModel = ViewModelProvider(this).get(PacienteViewModel::class.java)
-        val paciente:Paciente= Paciente(0,"pepito","perez")
+        val paciente: Paciente = Paciente(0,"pepito","perez")
         paciendeViewModel.addPaciente(paciente)
         Toast.makeText(this, "paciente agrregado al  BBD", Toast.LENGTH_SHORT).show()
 

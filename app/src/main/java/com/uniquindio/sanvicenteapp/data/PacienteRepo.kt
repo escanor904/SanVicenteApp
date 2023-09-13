@@ -1,5 +1,6 @@
 package com.uniquindio.sanvicenteapp.data
 
+import com.uniquindio.sanvicenteapp.entities.Paciente
 import kotlinx.coroutines.flow.Flow
 
 

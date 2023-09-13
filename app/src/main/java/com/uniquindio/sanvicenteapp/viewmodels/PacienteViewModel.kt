@@ -5,7 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.uniquindio.sanvicenteapp.data.PacienteRepo
 import com.uniquindio.sanvicenteapp.data.SanVicenteDatabase
-import com.uniquindio.sanvicenteapp.data.Paciente
+import com.uniquindio.sanvicenteapp.entities.Paciente
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.Flow
