@@ -15,6 +15,8 @@ import com.uniquindio.sanvicenteapp.entities.Paciente
 abstract class SanVicenteDatabase: RoomDatabase() {
 
     abstract fun pacienteDao(): PacienteDao
+    abstract fun medicoDao(): MedicoDao
+    abstract fun tipoMedicoDao(): TipoMedicoDao
    /*
    companion objeto compañero que proporciona metodos estaticos para acceder a la base de datos
     */
