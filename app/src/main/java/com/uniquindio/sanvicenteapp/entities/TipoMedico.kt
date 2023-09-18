@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-class TipoMedico(
+data class TipoMedico(
     @PrimaryKey(autoGenerate = true)
     val idTipoMedico: Int,
     val nombre: String,

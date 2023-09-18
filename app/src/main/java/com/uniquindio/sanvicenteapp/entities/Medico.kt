@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-class Medico (
+data class Medico (
 
     @PrimaryKey
     val idMedico: Int,

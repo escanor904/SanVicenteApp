@@ -4,11 +4,13 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.uniquindio.sanvicenteapp.entities.Medico
 import com.uniquindio.sanvicenteapp.entities.Paciente
+import com.uniquindio.sanvicenteapp.entities.TipoMedico
 
 @Database(
     //especificamos nuestras entidades
-    entities = [Paciente::class],
+    entities = [Paciente::class, Medico::class, TipoMedico::class],
     version = 1,
     exportSchema = false
 )
