@@ -7,10 +7,11 @@ import androidx.room.RoomDatabase
 import com.uniquindio.sanvicenteapp.entities.Medico
 import com.uniquindio.sanvicenteapp.entities.Paciente
 import com.uniquindio.sanvicenteapp.entities.TipoMedico
+import com.uniquindio.sanvicenteapp.entities.TipoMedicoMedicoRelation
 
 @Database(
     //especificamos nuestras entidades
-    entities = [Paciente::class, Medico::class, TipoMedico::class],
+    entities = [Paciente::class, Medico::class, TipoMedico::class, TipoMedicoMedicoRelation::class],
     version = 1,
     exportSchema = false
 )
@@ -19,6 +20,7 @@ abstract class SanVicenteDatabase: RoomDatabase() {
     abstract fun pacienteDao(): PacienteDao
     abstract fun medicoDao(): MedicoDao
     abstract fun tipoMedicoDao(): TipoMedicoDao
+    abstract fun tipoMedicoMedicoRelationDao(): TipoMedicoMedicoRelationDao
    /*
    companion objeto compañero que proporciona metodos estaticos para acceder a la base de datos
     */
