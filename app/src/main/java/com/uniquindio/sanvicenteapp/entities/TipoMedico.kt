@@ -1,17 +1,13 @@
 package com.uniquindio.sanvicenteapp.entities
-import androidx.room.Dao
+
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-
 @Entity
-data class Paciente(
+class TipoMedico (
     @PrimaryKey(autoGenerate = true)
-    val id:Int=0,
+    val idTipoMedico:Int,
     val nombre:String,
-    val apellido:String
-
-
-) {
-
+    val descripcion:String,
+){
 }

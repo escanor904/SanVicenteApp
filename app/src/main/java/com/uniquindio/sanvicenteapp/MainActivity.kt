@@ -27,16 +27,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //la clase R nos sirve como puente entre grafica y logica
-        editText1 = findViewById<EditText>(R.id.editText_1)
-        editText2 = findViewById<EditText>(R.id.editText_2)
-        textView_1 = findViewById<TextView>(R.id.textView_1)
+       // editText1 = findViewById<EditText>(R.id.editText_1)
+        //editText2 = findViewById<EditText>(R.id.editText_2)
+        //textView_1 = findViewById<TextView>(R.id.textView_1)
 
 
 
-        paciendeViewModel = ViewModelProvider(this).get(PacienteViewModel::class.java)
-        val paciente: Paciente = Paciente(0,"pepito","perez")
-        paciendeViewModel.addPaciente(paciente)
-        Toast.makeText(this, "paciente agrregado al  BBD", Toast.LENGTH_SHORT).show()
+       // paciendeViewModel = ViewModelProvider(this).get(PacienteViewModel::class.java)
+      //  val paciente: Paciente = Paciente(0,"pepito","perez")
+       // paciendeViewModel.addPaciente(paciente)
+       // Toast.makeText(this, "paciente agrregado al  BBD", Toast.LENGTH_SHORT).show()
 
 //       var pacientesFlow:Flow<List<Paciente>> = paciendeViewModel.listarPacientes()
 //        pacientesFlow.collect() { pacientes ->
