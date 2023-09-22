@@ -9,70 +9,74 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="148dp"
-        android:layout_height="52dp"
+        android:layout_width="156dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="76dp"
         android:background="@drawable/boton_redondo"
         android:text="Ingresar"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword4"
-        app:layout_constraintVertical_bias="0.135" />
-
-    <EditText
-        android:id="@+id/editTextTextPassword4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="46dp"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="243dp"
-        android:ems="10"
-        android:hint="Ingrese la clave"
-        android:inputType="textPassword"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
-
-    <EditText
-        android:id="@+id/editTextTextEmailAddress2"
-        android:layout_width="314dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="360dp"
-        android:layout_marginBottom="29dp"
-        android:ems="10"
-        android:hint="Ingrese el correo"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:text="Ingrese a sanVicente app"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="173dp"
-        android:layout_height="155dp"
-        android:layout_marginTop="96dp"
+        android:layout_height="183dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.315"
         app:srcCompat="@drawable/logo_sanvi" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="292dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="116dp"
+        android:ems="10"
+        android:hint="Correo"
+        android:inputType="textEmailAddress"
+        android:textColor="#000000"
+        android:textColorHint="#686868"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="286dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:textColor="#000000"
+        android:hint="Clave"
+        android:textColorHint="#686868"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintVertical_bias="0.241" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="273dp"
+        android:layout_height="38dp"
+        android:text="Ingrese a San Vicente App"
+        android:textColor="#686868"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.453" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
