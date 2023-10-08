@@ -9,5 +9,5 @@ data class TipoMedicoMedicoRelation(
         parentColumn = "idTipoMedico",
         entityColumn = "idTipo"
     )
-    val listaMedicos: List<Medico>
+    val listaMedicos: List<Medico> = emptyList()
 )
