@@ -1,7 +1,6 @@
 package com.uniquindio.sanvicenteapp.entities
 
 import androidx.room.Embedded
-import androidx.room.Entity
 import androidx.room.Relation
 
 data class TipoMedicoMedicoRelation(
@@ -10,5 +9,5 @@ data class TipoMedicoMedicoRelation(
         parentColumn = "idTipoMedico",
         entityColumn = "idTipo"
     )
-    val Medico: List<Medico>
+    val listaMedicos: List<Medico>
 )
