@@ -11,7 +11,7 @@ import com.uniquindio.sanvicenteapp.entities.TipoMedicoMedicoRelation
 
 @Database(
     //especificamos nuestras entidades
-    entities = [Paciente::class, Medico::class, TipoMedico::class, TipoMedicoMedicoRelation::class],
+    entities = [Paciente::class, Medico::class, TipoMedico::class],
     version = 1,
     exportSchema = false
 )
@@ -20,7 +20,6 @@ abstract class SanVicenteDatabase: RoomDatabase() {
     abstract fun pacienteDao(): PacienteDao
     abstract fun medicoDao(): MedicoDao
     abstract fun tipoMedicoDao(): TipoMedicoDao
-    abstract fun tipoMedicoMedicoRelationDao(): TipoMedicoMedicoRelationDao
    /*
    companion objeto compañero que proporciona metodos estaticos para acceder a la base de datos
     */

@@ -12,5 +12,5 @@ data class Medico (
     val idTipo: Int,
     val nombre: String,
     val apellido: String,
-    val numeroTarjetarofesional: String
+    val numeroTarjetaProfesional: String
 )
