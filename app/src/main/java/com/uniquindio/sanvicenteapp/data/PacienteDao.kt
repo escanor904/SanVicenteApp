@@ -1,9 +1,13 @@
 package com.uniquindio.sanvicenteapp.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Query
+import androidx.room.Transaction
 import androidx.room.Upsert
+import com.uniquindio.sanvicenteapp.entities.MedicoCitaRelation
 import com.uniquindio.sanvicenteapp.entities.Paciente
+import com.uniquindio.sanvicenteapp.entities.PacienteCitaRelation
 import kotlinx.coroutines.flow.Flow
 
 /*
@@ -15,9 +19,13 @@ interface PacienteDao {
     //onConflict = OnConflictStrategy.IGNORE si se intenta insertar un registro con el mismo id lo ignora y no hace nada
     @Upsert
     //se inserta si no existe y si existe lo actualiza a diferencia de insert que puede causar errores
-    fun addPaciente(paciente: Paciente)
+    suspend  fun addPaciente(paciente: Paciente)
 
 
-    @Query("SELECT * FROM paciente ")
-    fun getPacientes(): Flow<List<Paciente>>
+    @Query("SELECT * FROM Paciente ")
+    fun getPacientes(): LiveData<List<Paciente>>
+
+    @Transaction
+    @Query("SELECT * FROM Paciente")
+    fun getPacienteConCitas(): List<PacienteCitaRelation>
 }

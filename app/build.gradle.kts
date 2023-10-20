@@ -18,6 +18,14 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
+
+
+        javaCompileOptions {
+                annotationProcessorOptions {
+                    arguments["room.schemaLocation"] =
+                        "$projectDir/schemas"
+                }
+            }
         }
     }
 
@@ -35,6 +43,8 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
+
     kotlinOptions {
         jvmTarget = "17"
     }

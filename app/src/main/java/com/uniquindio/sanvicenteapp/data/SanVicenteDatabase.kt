@@ -4,22 +4,26 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.uniquindio.sanvicenteapp.entities.Cita
+import com.uniquindio.sanvicenteapp.entities.EstadoCita
 import com.uniquindio.sanvicenteapp.entities.Medico
 import com.uniquindio.sanvicenteapp.entities.Paciente
+import com.uniquindio.sanvicenteapp.entities.TipoCita
 import com.uniquindio.sanvicenteapp.entities.TipoMedico
-import com.uniquindio.sanvicenteapp.entities.TipoMedicoMedicoRelation
+import java.io.File
 
 @Database(
-    //especificamos nuestras entidades
-    entities = [Paciente::class, Medico::class, TipoMedico::class],
+    //especificamos las entidades que se van a crear en la base de datos
+    entities = [Paciente::class, Medico::class, TipoMedico::class, TipoCita::class, Cita::class, EstadoCita::class ],
     version = 1,
-    exportSchema = false
+    exportSchema = true
 )
 abstract class SanVicenteDatabase: RoomDatabase() {
 
     abstract fun pacienteDao(): PacienteDao
     abstract fun medicoDao(): MedicoDao
     abstract fun tipoMedicoDao(): TipoMedicoDao
+    abstract fun tipoCitaDao():TipoCitaDao
    /*
    companion objeto compañero que proporciona metodos estaticos para acceder a la base de datos
     */
@@ -42,8 +46,12 @@ abstract class SanVicenteDatabase: RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     SanVicenteDatabase::class.java,
+                    //"database/inicializar.db"
                     "san_vicente_database"
-                ).build()
+                )
+
+                .createFromAsset("database/san_vicente_database.db")
+                .build()
                 INSTANCE= instance
                 return instance
 
