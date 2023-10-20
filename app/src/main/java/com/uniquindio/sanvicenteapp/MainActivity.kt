@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         // agrega un paciente a la base de datos
         paciendeViewModel = ViewModelProvider(this).get(PacienteViewModel::class.java)
-        val paciente: Paciente = Paciente(0, "pepito", "perez", "cll24 #14-28", "3126789342")
+        val paciente: Paciente = Paciente(0, "pepito", "perez", "cll24 #14-28", "3126789342","pepito@gmail.com","pepito123")
         paciendeViewModel.addPaciente(paciente)
         //Toast.makeText(this, "paciente "+paciente.nombre+" agregado a la BBD", Toast.LENGTH_SHORT).show()
 

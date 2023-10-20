@@ -11,7 +11,10 @@ data class Paciente(
     val nombre:String,
     val apellido:String,
     val direccion:String,
-    val telefono:String
+    val telefono:String,
+    val correo: String,
+    val clave: String
+
 
 
 

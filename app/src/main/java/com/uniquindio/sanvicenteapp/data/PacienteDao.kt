@@ -5,10 +5,8 @@ import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Upsert
-import com.uniquindio.sanvicenteapp.entities.MedicoCitaRelation
 import com.uniquindio.sanvicenteapp.entities.Paciente
 import com.uniquindio.sanvicenteapp.entities.PacienteCitaRelation
-import kotlinx.coroutines.flow.Flow
 
 /*
 En esta interface se ubican todas la operaciones de acceso a datos en la tabla paciente_table
@@ -24,6 +22,10 @@ interface PacienteDao {
 
     @Query("SELECT * FROM Paciente ")
     fun getPacientes(): LiveData<List<Paciente>>
+
+    @Query("SELECT * FROM Paciente p WHERE p.correo = :correo AND p.clave = :clave")
+    fun getPaciente(correo: String, clave: String): LiveData<Paciente?>
+
 
     @Transaction
     @Query("SELECT * FROM Paciente")
