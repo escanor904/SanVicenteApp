@@ -16,6 +16,7 @@
 
         android:layout_marginBottom="68dp"
         android:background="@drawable/boton_redondo"
+        android:onClick="lanzarRecervarCita"
         android:text="Recervar cita"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/buttonCerrarCesion"

@@ -23,4 +23,5 @@ interface TipoCitaDao {
     @Query("SELECT * FROM TipoCita")
     fun getTipoCitaConCitas(): LiveData<TipoCitaCitaRelation>
 
+
 }

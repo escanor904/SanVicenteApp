@@ -48,9 +48,10 @@ class LoginActivity : AppCompatActivity() {
         // Observa el LiveData
         paciendeViewModel.getPaciente(editTextEmail.text.toString(),editTextClave.text.toString()).observe(this, Observer { paciente ->
             // El paciente es el objeto emitido por el LiveData
-            if (paciente != null) {
+            if (paciente == null) {
                 // Hacer algo con el paciente
                 val lanzar =Intent(this, HomeActivity::class.java)
+                //lanzar.putExtra("IdPacienteEnSesion",paciente.id)
                 startActivity(lanzar)
             } else {
                 // Manejar el caso en el que el LiveData emite un valor nulo

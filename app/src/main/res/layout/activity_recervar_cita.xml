@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecervarCitaActivity">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView1"
+        android:layout_width="378dp"
+        android:layout_height="711dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/white"
+        android:visibility="visible"
+
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="637dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="                                 Reserve su cita" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="278dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="   TipoCita:" />
+
+                <Spinner
+                    android:id="@+id/spinerTipoCita"
+                    android:layout_width="345dp"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="15dp" />
+
+                <TextView
+                    android:id="@+id/textViewDescripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="  Descripcion:" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="  Fecha para la cita:" />
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+
+                    <RadioButton
+                        android:id="@+id/radio0800AM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="08:00 AM" />
+
+                    <RadioButton
+                        android:id="@+id/radio0830AM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="08:30 AM" />
+
+                    <RadioButton
+                        android:id="@+id/radio0900AM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="09:00 AM" />
+
+                    <RadioButton
+                        android:id="@+id/radio0930AM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="09:30 AM" />
+
+                    <RadioButton
+                        android:id="@+id/radio1000AM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="10:00 AM" />
+
+                    <RadioButton
+                        android:id="@+id/radio1030AM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="10:30 AM" />
+
+                    <RadioButton
+                        android:id="@+id/radio1100AM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="11:00 AM" />
+
+                    <RadioButton
+                        android:id="@+id/radio1130AM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="11:30 AM" />
+
+                    <RadioButton
+                        android:id="@+id/radio0200AM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="02:00 AM" />
+
+                    <RadioButton
+                        android:id="@+id/radio0230AM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="02:30 AM" />
+
+                    <RadioButton
+                        android:id="@+id/radio0300AM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="03:00 AM" />
+
+                    <RadioButton
+                        android:id="@+id/radio0330AM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="03:30 AM" />
+
+                    <RadioButton
+                        android:id="@+id/radio0400AM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="04:00 AM" />
+
+                    <RadioButton
+                        android:id="@+id/radio0430AM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="04:30 AM" />
+
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/buttonReservarCita"
+
+
+                    style="@style/NextButton"
+                    android:layout_width="203dp"
+                    android:layout_height="match_parent"
+
+                    android:background="@drawable/boton_redondo"
+                    android:onClick="goCard2"
+
+                    android:text="Siguiente"
+                    android:textColor="#ffff" />
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="378dp"
+        android:layout_height="711dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/white"
+        android:visibility="gone"
+
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="120dp"
+                    android:text="Detalle Cita" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="278dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="   TipoCita:" />
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="  Descripción:" />
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="  Fecha de la cita::" />
+
+
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="  Hora de la cita::" />
+
+
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+                <Button
+                    android:id="@+id/buttonConfirmar"
+
+
+                    android:layout_width="203dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="75dp"
+                    android:layout_marginTop="240dp"
+
+                    android:background="@drawable/boton_redondo"
+                    android:text="Confirmar"
+
+                    android:textColor="#ffff" />
+
+
+            </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
