@@ -1,5 +1,6 @@
 package com.uniquindio.sanvicenteapp.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Transaction
@@ -14,7 +15,10 @@ interface TipoMedicoDao {
     fun addTipoMedico(tipoMedico: TipoMedico)
 
     @Query("SELECT * FROM TipoMedico")
-    fun getTiposMedico(): Flow<List<TipoMedico>>
+    fun getTiposMedico(): LiveData<List<TipoMedico>>
+
+    @Query("SELECT * FROM TipoMedico")
+    suspend fun getTiposMedicoEstatico(): List<TipoMedico>
 
     @Transaction
     @Query("SELECT * FROM TipoMedico")

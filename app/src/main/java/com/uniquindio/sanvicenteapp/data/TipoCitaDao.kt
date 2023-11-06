@@ -9,6 +9,7 @@ import com.uniquindio.sanvicenteapp.entities.Medico
 import com.uniquindio.sanvicenteapp.entities.MedicoCitaRelation
 import com.uniquindio.sanvicenteapp.entities.TipoCita
 import com.uniquindio.sanvicenteapp.entities.TipoCitaCitaRelation
+import com.uniquindio.sanvicenteapp.entities.TipoMedicoTipoCitaRelation
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -22,6 +23,12 @@ interface TipoCitaDao {
     @Transaction
     @Query("SELECT * FROM TipoCita")
     fun getTipoCitaConCitas(): LiveData<TipoCitaCitaRelation>
+
+    @Transaction
+    @Query("SELECT * FROM TipoCita")
+    fun getTipoMedicoConTipoCitas(): LiveData<TipoMedicoTipoCitaRelation>
+
+
 
 
 }

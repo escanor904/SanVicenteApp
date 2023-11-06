@@ -24,6 +24,7 @@ abstract class SanVicenteDatabase: RoomDatabase() {
     abstract fun medicoDao(): MedicoDao
     abstract fun tipoMedicoDao(): TipoMedicoDao
     abstract fun tipoCitaDao():TipoCitaDao
+    abstract fun citaDao():CitaDao
    /*
    companion objeto compañero que proporciona metodos estaticos para acceder a la base de datos
     */

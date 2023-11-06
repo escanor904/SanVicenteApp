@@ -8,6 +8,7 @@ android {
     namespace = "com.uniquindio.sanvicenteapp"
     compileSdk = 33
 
+
     defaultConfig {
         applicationId = "com.uniquindio.sanvicenteapp"
         minSdk = 24
@@ -67,6 +68,8 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+
 }
 
 dependencies {

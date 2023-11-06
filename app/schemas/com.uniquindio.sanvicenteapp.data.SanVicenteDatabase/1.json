@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "f3d4f9ce355710ec32ba842906d12a16",
+    "identityHash": "33e0dd90fdecbf8ae587487496ae5f51",
     "entities": [
       {
         "tableName": "Paciente",
@@ -118,43 +118,11 @@
       },
       {
         "tableName": "TipoMedico",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idTipoMedico` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre` TEXT NOT NULL, `descripcion` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idTipoMedico` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `idTipo` INTEGER NOT NULL, `nombre` TEXT NOT NULL, `descripcion` TEXT NOT NULL, FOREIGN KEY(`idTipo`) REFERENCES `TipoCita`(`idTipoCita`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "idTipoMedico",
             "columnName": "idTipoMedico",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "nombre",
-            "columnName": "nombre",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "descripcion",
-            "columnName": "descripcion",
-            "affinity": "TEXT",
-            "notNull": true
-          }
-        ],
-        "primaryKey": {
-          "autoGenerate": true,
-          "columnNames": [
-            "idTipoMedico"
-          ]
-        },
-        "indices": [],
-        "foreignKeys": []
-      },
-      {
-        "tableName": "TipoCita",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idTipoCita` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `idTipo` INTEGER NOT NULL, `nombre` TEXT NOT NULL, `descripcion` TEXT NOT NULL, FOREIGN KEY(`idTipo`) REFERENCES `TipoMedico`(`idTipoMedico`) ON UPDATE NO ACTION ON DELETE CASCADE )",
-        "fields": [
-          {
-            "fieldPath": "idTipoCita",
-            "columnName": "idTipoCita",
             "affinity": "INTEGER",
             "notNull": true
           },
@@ -180,23 +148,55 @@
         "primaryKey": {
           "autoGenerate": true,
           "columnNames": [
-            "idTipoCita"
+            "idTipoMedico"
           ]
         },
         "indices": [],
         "foreignKeys": [
           {
-            "table": "TipoMedico",
+            "table": "TipoCita",
             "onDelete": "CASCADE",
             "onUpdate": "NO ACTION",
             "columns": [
               "idTipo"
             ],
             "referencedColumns": [
-              "idTipoMedico"
+              "idTipoCita"
             ]
           }
         ]
+      },
+      {
+        "tableName": "TipoCita",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idTipoCita` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre` TEXT NOT NULL, `descripcion` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "idTipoCita",
+            "columnName": "idTipoCita",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "descripcion",
+            "columnName": "descripcion",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "idTipoCita"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
       },
       {
         "tableName": "Cita",
@@ -341,7 +341,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f3d4f9ce355710ec32ba842906d12a16')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '33e0dd90fdecbf8ae587487496ae5f51')"
     ]
   }
 }

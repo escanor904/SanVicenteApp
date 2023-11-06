@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.uniquindio.sanvicenteapp.data.MedicoRepo
 import com.uniquindio.sanvicenteapp.data.SanVicenteDatabase
+import com.uniquindio.sanvicenteapp.entities.Cita
 import com.uniquindio.sanvicenteapp.entities.Medico
 import com.uniquindio.sanvicenteapp.entities.MedicoCitaRelation
 import kotlinx.coroutines.Dispatchers
@@ -34,6 +35,8 @@ class MedicoViewModel(application: Application): AndroidViewModel(application) {
     private val repository: MedicoRepo
     val readAllMedicos: LiveData<List<Medico>>
     val readAllCitasMedicos: LiveData<List<MedicoCitaRelation>>
+    val medicosConCitas:  LiveData<List<MedicoCitaRelation>>
+    
 
 
 
@@ -43,16 +46,31 @@ class MedicoViewModel(application: Application): AndroidViewModel(application) {
         repository = MedicoRepo(medicoDao)
         readAllMedicos=repository.readAllMedicos
         readAllCitasMedicos= repository.readAllCitasDeMedicos
+        medicosConCitas = repository.medicosConCitas
 
 
 
     }
 
     fun addMedico(medico: Medico){
-        viewModelScope.launch (Dispatchers.IO) {
+        viewModelScope.launch (Dispatchers.Default) {
             repository.addMedico(medico)
         }
     }
+
+    fun getMedicoPorId(id: Int):List<Cita> {
+
+        var listaCitas :List<Cita> = emptyList()
+        viewModelScope.launch(Dispatchers.Default) {
+            listaCitas = withContext(Dispatchers.IO){repository.getMedicoPorId(id)}
+        }
+
+        return listaCitas
+    }
+
+
+
+
 
 
 

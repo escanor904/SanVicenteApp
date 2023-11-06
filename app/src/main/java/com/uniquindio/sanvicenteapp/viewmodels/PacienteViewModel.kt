@@ -34,8 +34,8 @@ class PacienteViewModel(application: Application):AndroidViewModel (application)
         }
     }
 
-    fun getPaciente(correo:String , clave:String):LiveData<Paciente?>{
-        val paciente:LiveData<Paciente?> = repository.getPaciente(correo, clave)
+    fun getPaciente(correo:String , clave:String):LiveData<Paciente>{
+        val paciente:LiveData<Paciente> = repository.getPaciente(correo, clave)
 
 
         return paciente

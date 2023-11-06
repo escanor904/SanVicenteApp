@@ -1,15 +1,24 @@
 package com.uniquindio.sanvicenteapp.data
 
+import androidx.lifecycle.LiveData
 import com.uniquindio.sanvicenteapp.entities.TipoMedico
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.withContext
 
 class TipoMedicoRepo(private val tipoMedicoDao: TipoMedicoDao) {
 
-    suspend fun addTipoMedico(tipoMedico: TipoMedico){
+    val readAllTipoMedico: LiveData<List<TipoMedico>> = tipoMedicoDao.getTiposMedico()
+
+    fun addTipoMedico(tipoMedico: TipoMedico){
         tipoMedicoDao.addTipoMedico(tipoMedico)
     }
 
-    fun leerTiposMedico(): Flow<List<TipoMedico>>{
-        return tipoMedicoDao.getTiposMedico()
+    suspend fun getTiposMedicoEstatico() :List<TipoMedico>? {
+        return withContext(Dispatchers.IO){
+            getTiposMedicoEstatico()
+        }
+
     }
+
 }

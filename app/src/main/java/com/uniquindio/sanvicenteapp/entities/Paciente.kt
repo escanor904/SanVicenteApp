@@ -3,7 +3,7 @@ import androidx.room.Dao
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-
+//Entidad principal
 @Entity
 data class Paciente(
     @PrimaryKey(autoGenerate = true)

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecervarCitaActivity">
+    tools:context=".ReservarCitaActivity">
 
 
     <androidx.cardview.widget.CardView
@@ -48,7 +48,7 @@
                     android:layout_width="278dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:text="   TipoCita:" />
+                    android:text="   Tipo Médico:" />
 
                 <Spinner
                     android:id="@+id/spinerTipoCita"
@@ -57,15 +57,18 @@
                     android:layout_marginTop="15dp" />
 
                 <TextView
-                    android:id="@+id/textViewDescripcion"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:text="  Descripcion:" />
 
                 <EditText
+                    android:id="@+id/editTextDescripcion"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+
+                    />
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
@@ -75,117 +78,98 @@
 
 
                 <EditText
+                    android:id="@+id/editTextFecha"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:maxLines="1"
+
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:onClick="selectFecha" />
 
 
 
-                <RadioGroup
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
 
-
-                    <RadioButton
-                        android:id="@+id/radio0800AM"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:id="@+id/radioGroupCard1_izq"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="08:00 AM" />
+                        android:orientation="vertical">
 
-                    <RadioButton
-                        android:id="@+id/radio0830AM"
-                        android:layout_width="wrap_content"
+
+
+                        <RadioButton
+                            android:id="@+id/radio0800AM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:text="08:00 AM" />
+
+                        <RadioButton
+                            android:id="@+id/radio0830AM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:text="08:30 AM" />
+
+                        <RadioButton
+                            android:id="@+id/radio0900AM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:text="09:00 AM" />
+
+
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/radioGroupCard1_der"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="08:30 AM" />
+                        android:orientation="vertical">
 
-                    <RadioButton
-                        android:id="@+id/radio0900AM"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="09:00 AM" />
 
-                    <RadioButton
-                        android:id="@+id/radio0930AM"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="09:30 AM" />
 
-                    <RadioButton
-                        android:id="@+id/radio1000AM"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="10:00 AM" />
+                        <RadioButton
+                            android:id="@+id/radio0930AM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:text="09:30 AM" />
 
-                    <RadioButton
-                        android:id="@+id/radio1030AM"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="10:30 AM" />
+                        <RadioButton
+                            android:id="@+id/radio1000AM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:text="08:30 AM" />
 
-                    <RadioButton
-                        android:id="@+id/radio1100AM"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="11:00 AM" />
+                        <RadioButton
+                            android:id="@+id/radio1030AM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:text="10:30 AM" />
 
-                    <RadioButton
-                        android:id="@+id/radio1130AM"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="11:30 AM" />
 
-                    <RadioButton
-                        android:id="@+id/radio0200AM"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="02:00 AM" />
 
-                    <RadioButton
-                        android:id="@+id/radio0230AM"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="02:30 AM" />
 
-                    <RadioButton
-                        android:id="@+id/radio0300AM"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="03:00 AM" />
 
-                    <RadioButton
-                        android:id="@+id/radio0330AM"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="03:30 AM" />
+                    </LinearLayout>
 
-                    <RadioButton
-                        android:id="@+id/radio0400AM"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="04:00 AM" />
 
-                    <RadioButton
-                        android:id="@+id/radio0430AM"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="04:30 AM" />
-
-                </RadioGroup>
+                </LinearLayout>
 
                 <Button
                     android:id="@+id/buttonReservarCita"
@@ -250,8 +234,10 @@
 
 
                 <EditText
+                    android:id="@+id/textViewTipoCita"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    />
 
                 <TextView
                     android:id="@+id/textView8"
@@ -262,6 +248,7 @@
 
 
                 <EditText
+                    android:id="@+id/textViewDescripcion2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
@@ -276,6 +263,7 @@
 
 
                 <EditText
+                    android:id="@+id/textViewFechaCita"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
@@ -291,6 +279,7 @@
 
 
                 <EditText
+                    android:id="@+id/textViewHoraCita"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
@@ -305,8 +294,9 @@
                     android:layout_marginTop="240dp"
 
                     android:background="@drawable/boton_redondo"
-                    android:text="Confirmar"
+                    android:onClick="confirmarCita"
 
+                    android:text="Confirmar"
                     android:textColor="#ffff" />
 
 

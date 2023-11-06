@@ -2,22 +2,24 @@ package com.uniquindio.sanvicenteapp.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.uniquindio.sanvicenteapp.data.SanVicenteDatabase
 import com.uniquindio.sanvicenteapp.data.TipoMedicoRepo
 import com.uniquindio.sanvicenteapp.entities.TipoMedico
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class TipoMedicoViewModel(application: Application): AndroidViewModel(application) {
     private val repository: TipoMedicoRepo
-    private val readAllData: Flow<List<TipoMedico>>
+    val readAllTipoMedico: LiveData<List<TipoMedico>>
+
 
     init {
         val tipoMedicoDao = SanVicenteDatabase.getDatabase(application).tipoMedicoDao()
         repository = TipoMedicoRepo(tipoMedicoDao)
-        readAllData = repository.leerTiposMedico()
+        readAllTipoMedico = repository.readAllTipoMedico
     }
 
     fun addTipoMedico(tipoMedico: TipoMedico){
@@ -26,7 +28,18 @@ class TipoMedicoViewModel(application: Application): AndroidViewModel(applicatio
         }
     }
 
-    fun listarTiposMedico(): Flow<List<TipoMedico>>{
-        return readAllData;
+    fun getTiposMedicoEstatico(): List<TipoMedico>? {
+
+        var tiposDemedico : List<TipoMedico>? = null
+
+        viewModelScope.launch(Dispatchers.IO){
+            tiposDemedico = withContext(Dispatchers.IO){repository.getTiposMedicoEstatico()}
+        }
+
+        return tiposDemedico
     }
+
+
+
+
 }

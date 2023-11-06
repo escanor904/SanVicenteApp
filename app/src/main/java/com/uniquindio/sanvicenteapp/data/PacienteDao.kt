@@ -24,7 +24,7 @@ interface PacienteDao {
     fun getPacientes(): LiveData<List<Paciente>>
 
     @Query("SELECT * FROM Paciente p WHERE p.correo = :correo AND p.clave = :clave")
-    fun getPaciente(correo: String, clave: String): LiveData<Paciente?>
+    fun getPaciente(correo: String, clave: String): LiveData<Paciente>
 
 
     @Transaction
