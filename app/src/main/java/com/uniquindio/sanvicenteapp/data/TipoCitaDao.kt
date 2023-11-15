@@ -29,6 +29,7 @@ interface TipoCitaDao {
     fun getTipoMedicoConTipoCitas(): LiveData<TipoMedicoTipoCitaRelation>
 
 
-
+    @Query("SELECT * FROM TipoCita")
+    fun getTiposDeCitasTest(): List<TipoCita>
 
 }
