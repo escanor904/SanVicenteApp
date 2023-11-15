@@ -48,7 +48,7 @@ class CitaAdapter(private val dataSet: List<Cita>) : RecyclerView.Adapter<CitaAd
                 202 -> tipoCita = "Odontologica"
             }
 
-            binding.textViewTipoCita.text = "General"
+            binding.textViewTipoCita.text = tipoCita
             binding.textViewDescripcion.text = "${c.motivoCita}"
             binding.textViewFechaCita.text = "${c.fechaAtencion}"
             binding.textViewHoraCita.text = "${c.hora}"
